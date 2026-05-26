@@ -2,10 +2,13 @@
 Configuration settings for the FastAPI JWT application
 """
 from pydantic_settings import BaseSettings
+from pydantic import ConfigDict
 
 
 class Settings(BaseSettings):
     """Application settings"""
+    
+    model_config = ConfigDict(env_file=".env", case_sensitive=True)
     
     # JWT Configuration
     SECRET_KEY: str = "your-secret-key-change-this-in-production"
@@ -21,10 +24,6 @@ class Settings(BaseSettings):
     # Server Configuration
     HOST: str = "0.0.0.0"
     PORT: int = 8000
-    
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
 
 
 settings = Settings()
