@@ -21,7 +21,7 @@ Esta API proporciona:
 
 ## Requisitos
 
-- Python 3.9+
+- Python 3.10+
 - Poetry (para instalación local)
 - Docker y Docker Compose (opcional, para despliegue en contenedores)
 
