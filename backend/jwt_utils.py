@@ -60,7 +60,6 @@ def create_refresh_token(username: str) -> str:
     Returns:
         str: The refresh token
     """
-    expires_in = settings.REFRESH_TOKEN_EXPIRE_DAYS * 24 * 3600
     expire = datetime.now(timezone.utc) + timedelta(days=settings.REFRESH_TOKEN_EXPIRE_DAYS)
     
     to_encode = {

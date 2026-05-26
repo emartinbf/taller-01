@@ -16,7 +16,7 @@ Esta API proporciona:
 - ✅ Token de refresco con expiración de 7 días
 - ✅ Validación de credenciales (usuario: admin, contraseña: admin123)
 - ✅ Documentación automática con Swagger UI
-- ✅ Contenido en Docker con docker-compose
+- ✅ Contenedor Docker con docker-compose
 - ✅ Gestión de dependencias con Poetry
 
 ## Requisitos
