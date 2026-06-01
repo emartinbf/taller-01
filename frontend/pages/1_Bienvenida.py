@@ -95,6 +95,27 @@ st.markdown(
 
 init_auth_session()
 
+MICROSOFT_CERTIFICATIONS_2026 = [
+    {
+        "title": "Azure Security Engineer Associate",
+        "type": "Certificación",
+        "date": "31 de agosto de 2026",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-security-engineer/",
+    },
+    {
+        "title": "Power Platform Functional Consultant Associate",
+        "type": "Certificación",
+        "date": "31 de agosto de 2026",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/power-platform-functional-consultant-associate/",
+    },
+    {
+        "title": "Windows Server Hybrid Administrator Associate",
+        "type": "Certificación",
+        "date": "30 de septiembre de 2026",
+        "url": "https://learn.microsoft.com/en-us/credentials/certifications/windows-server-hybrid-administrator/",
+    },
+]
+
 if not st.session_state.get("is_authenticated"):
     st.markdown('<div style="text-align: center; margin-top: 100px;">', unsafe_allow_html=True)
     st.markdown('<div style="font-size: 64px; margin-bottom: 16px;">🔒</div>', unsafe_allow_html=True)
@@ -134,6 +155,19 @@ with col2:
     st.markdown('<h3>✅ Características</h3>', unsafe_allow_html=True)
     st.markdown('<p>• Autenticación segura con JWT<br>• Tokens de acceso y refresco<br>• Sesión persistente<br>• Logout seguro</p>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
+
+    st.markdown('<h3 style="color: #ffffff;">📚 Certificaciones Microsoft 2026</h3>', unsafe_allow_html=True)
+    st.markdown('<p style="color: rgba(255, 255, 255, 0.75); margin-bottom: 16px;">Últimas actualizaciones publicadas por Microsoft Learn sobre certificaciones con cambios en 2026.</p>', unsafe_allow_html=True)
+
+    cert_col_1, cert_col_2 = st.columns(2)
+    cert_cols = [cert_col_1, cert_col_2]
+    for idx, cert in enumerate(MICROSOFT_CERTIFICATIONS_2026):
+        with cert_cols[idx % 2]:
+            st.markdown('<div class="info-card">', unsafe_allow_html=True)
+            st.markdown(f'<h3>🪪 {cert["title"]}</h3>', unsafe_allow_html=True)
+            st.markdown(f'<p><strong>Tipo:</strong> {cert["type"]}<br><strong>Fecha clave:</strong> {cert["date"]}</p>', unsafe_allow_html=True)
+            st.markdown(f'<p><a href="{cert["url"]}" target="_blank">Ver detalle oficial</a></p>', unsafe_allow_html=True)
+            st.markdown('</div>', unsafe_allow_html=True)
     
     st.markdown("<br>", unsafe_allow_html=True)
     
